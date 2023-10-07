@@ -11,10 +11,13 @@
       const years_job = Math.abs(age_dt.getUTCFullYear() - 1970);
       while (meta_counter < MAX_META) {
         meta_counter++;
-        const link = document.createElement('meta');
-        link.setAttribute('property', meta_counter == 2 ? 'og:description' : 'description');
+        const link = document.createElement("meta");
+        link.setAttribute(
+          "property",
+          meta_counter == 2 ? "og:description" : "description"
+        );
         link.content = `I am a software engineer with more than ${years_job} years of coding experience and development process experience. With success in all phases of the development process, design, construction and testing. Work collaboratively and freelance within cross- functional teams to identify and resolve bugs and functionality issues. Strong technical analysis skills and development processes.`;
-        document.getElementsByTagName('head')[0].appendChild(link);
+        document.getElementsByTagName("head")[0].appendChild(link);
       }
     </script>
     <!-- ********************** -->
@@ -48,12 +51,12 @@
     />
     <meta property="og:url" content="https://jdmartinezrios.github.io/" />
     <meta property="profile:username" content="jdmartinezrios" />
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
-    <meta http-equiv='pragma' content='no-cache'>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
     <link rel="stylesheet" href="./public/css/main.css" text="css" />
     <link rel="stylesheet" href="./public/css/normailize.css" text="css" />
-    <script async src="./public/js/main.js"></script>
+    <script defer src="./public/js/main.js"></script>
   </head>
 
   <body>
@@ -107,7 +110,7 @@
                   <span> Software Engineer </span>
                 </h6>
                 <a
-                  href="https://patagonian.it/home"
+                  href="https://patagonian.com/"
                   class="job-enterpise"
                   target="_blank"
                   >@PATAGONIAN</a
@@ -117,10 +120,55 @@
                 </h6>
                 <p>
                   Plan and develop multiplatform mobile applications using
-                  technologies such as FLUTTER, PHYTON, CIRCLECI, JIRA, DOCKER
-                  according to the guidelines proposed by the company.
+                  technologies such as Angular, ReactJs, Flutter, Phyton,
+                  CircleCi, Jira, Docker according to guidelines proposed by the
+                  company.
                 </p>
               </div>
+              <div class="card-experience">
+                <h6>
+                  <span> Software Engineer </span>
+                </h6>
+                <a
+                  href="https://tyba.com.co/"
+                  class="job-enterpise"
+                  target="_blank"
+                  >@TYBA</a
+                >
+                <h6>
+                  <span class="experience-time"> 2022 Nov - 2023 Feb </span>
+                </h6>
+                <p>
+                  Planned and developed multi platform applications using
+                  technologies such as Flutter, NodeJS, Firebase, AWS according
+                  to guidelines proposed by the company.
+                </p>
+              </div>
+              <div class="card-experience">
+                <h6>
+                  <span> Software Engineer </span>
+                </h6>
+                <a
+                  href="https://qubika.com/"
+                  class="job-enterpise"
+                  target="_blank"
+                  >@MOOVE-IT</a
+                >
+                <h6>
+                  <span class="experience-time"> 2021 Mar - 2022 Aug </span>
+                </h6>
+                <p>
+                  Developed program logic for new applications based on fresh
+                  coding or revamped logic from existing applications using
+                  technologies such as ReactJS, Redux, Cypress, Jest, GraphQL,
+                  Heroku, .NET Core, AWS according to guidelines proposed by the
+                  company.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="experience-slide fade">
+            <div class="experience-slide-body">
               <div class="card-experience">
                 <h6>
                   <span> Software Engineer </span>
@@ -132,11 +180,11 @@
                   >@SARALT</a
                 >
                 <h6>
-                  <span class="experience-time"> 2020 Feb - Present </span>
+                  <span class="experience-time"> 2020 Feb - 2021 Apr </span>
                 </h6>
                 <p>
                   Develop cross-platform mobile applications using technologies
-                  such as Flutter, NodeJs, Firebase according to the guidelines
+                  such as Flutter, NodeJs, Firebase according to guidelines
                   proposed by the company.
                 </p>
               </div>
@@ -160,10 +208,6 @@
                   and Fireabase.
                 </p>
               </div>
-            </div>
-          </div>
-          <div class="experience-slide fade">
-            <div class="experience-slide-body">
               <div class="card-experience">
                 <h6>
                   <span> Software Engineer </span>
@@ -183,6 +227,10 @@
                   .Net Core, Xamarin, Flutter, Firebase.
                 </p>
               </div>
+            </div>
+          </div>
+          <div class="experience-slide fade">
+            <div class="experience-slide-body">
               <div class="card-experience">
                 <h6>
                   <span> Software Eng Freelance </span>
@@ -202,10 +250,10 @@
                   <span> Software Analyst </span>
                 </h6>
                 <a
-                  href="https://es-la.facebook.com/pages/category/Local-Business/GTC-Corporation-227641707947259/"
+                  href="https://gtccorporation.com/index.php/home/"
                   class="job-enterpise"
                   target="_blank"
-                  >@GTC</a
+                  >@GTC CORPORATION</a
                 >
                 <h6>
                   <span class="experience-time"> 2018 Dec - 2019 Apr </span>
@@ -216,10 +264,6 @@
                   Ionic, JavaEE, Spring boot, OracleDB.
                 </p>
               </div>
-            </div>
-          </div>
-          <div class="experience-slide fade">
-            <div class="experience-slide-body">
               <div class="card-experience">
                 <h6>
                   <span> Software Developer </span>
@@ -241,8 +285,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="experience-slide fade">3</div>
-                <div class="experience-slide fade">4</div> -->
         </div>
         <div class="next-button" onclick="plusSlides(1)">
           <svg
@@ -302,8 +344,8 @@
                     <span> Javascript </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -317,8 +359,8 @@
                     <span> Typescript </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -332,8 +374,8 @@
                     <span> NodeJS </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
               </div>
@@ -351,8 +393,8 @@
                     <span> Angular </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -366,8 +408,8 @@
                     <span> Flutter </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
+                    I have worked with this tech for more than 4 year using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -381,8 +423,8 @@
                     <span> Html </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
               </div>
@@ -400,8 +442,8 @@
                     <span> Css </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -415,8 +457,8 @@
                     <span> Java EE </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 2 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -465,8 +507,8 @@
                     <span> MySql </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -529,8 +571,8 @@
                     <span> ReactJS </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 2 years using it in
-                    personal projects and high level companies.
+                    I have worked with this tech for more than 4 years using it
+                    in personal projects and high level companies.
                   </p>
                 </div>
               </div>
@@ -563,8 +605,8 @@
                     <span> Firabase </span>
                   </h6>
                   <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
+                    I have worked with this tech for 3 years using it in
+                    personal projects and high level companies.
                   </p>
                 </div>
                 <div class="card-experience">
@@ -722,10 +764,93 @@
           <div class="projects-slide-body">
             <div class="card-experience">
               <h6>
+                <span> Suka </span>
+              </h6>
+              <h6>
+                <span class="experience-time"> 2023 Aug - 2023 Oct </span>
+              </h6>
+              <p>
+                ERP system, for the management of shipping, receiving, and
+                billing of goods, mainly operating in the southern region of
+                Latin America.
+              </p>
+            </div>
+            <div class="card-experience">
+              <h6>
+                <span> Almundo </span>
+              </h6>
+              <h6>
+                <span class="experience-time"> 2022 Mar - 2023 Sep </span>
+              </h6>
+              <p>
+                Software platform operating in Latin America focused on offering
+                vocational plans, traveling, flights, and much more.
+              </p>
+            </div>
+            <div class="card-experience">
+              <h6>
+                <span> Tyba </span>
+              </h6>
+              <h6>
+                <span class="experience-time"> 2022 Nov - 2023 Feb </span>
+              </h6>
+              <p>
+                Mobile applications for investment and to get more information
+                about taxes, to get more money using the concept of Fintech, and
+                much more.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projects-slide fade">
+          <div class="projects-slide-body">
+            <div class="card-experience">
+              <h6>
+                <span> Prescribe Wellness </span>
+              </h6>
+              <h6>
+                <span class="experience-time"> 2021 Mar - 2022 Aug </span>
+              </h6>
+              <p>
+                Fully integrated software that allows customers to see the
+                different options for medical plans and the nearest pharmacies
+                depending on their location.
+              </p>
+            </div>
+            <div class="card-experience">
+              <h6>
+                <span> Teen Workforce Initiative </span>
+              </h6>
+              <h6>
+                <span class="experience-time"> 2021 Sep - 2022 Mar </span>
+              </h6>
+              <p>
+                Software to share job information, shedule webinars and
+                workshops, focused in the young people of Arizona.
+              </p>
+            </div>
+            <div class="card-experience">
+              <h6>
+                <span> Panelist Connect </span>
+              </h6>
+              <h6>
+                <span class="experience-time"> 2021 Jan - 2021 Sep </span>
+              </h6>
+              <p>
+                A software tool to communicate a mobile device with an NUC
+                server device via BLE (Bluetooth).
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projects-slide fade">
+          <div class="projects-slide-body">
+            <div class="card-experience">
+              <h6>
                 <span> eCpunch </span>
               </h6>
               <h6>
-                <span class="experience-time"> 2020 Mar - Present </span>
+                <span class="experience-time"> 2020 Mar - 2021 Jan </span>
               </h6>
               <p>
                 Fully integrated software that allows you to control the
@@ -753,7 +878,7 @@
                 <span class="experience-time"> 2020 Feb - 2020 Jun </span>
               </h6>
               <p>
-                Software for the labor management of a woman giving a private
+                Software to labor management of a woman giving a private
                 transport exclusively for women.
               </p>
             </div>
@@ -766,11 +891,11 @@
                 <span> Ryftracking </span>
               </h6>
               <h6>
-                <span class="experience-time"> 2020 Jan - Present </span>
+                <span class="experience-time"> 2020 Jan - 2020 Apr </span>
               </h6>
               <p>
-                Software for the management of shipments and parcels with an
-                integrated tracking system.
+                Software to manage shipments and parcels with an integrated
+                tracking system.
               </p>
             </div>
             <div class="card-experience">
@@ -821,8 +946,8 @@
                 <span class="experience-time"> 2019 Feb - 2019 Apr </span>
               </h6>
               <p>
-                Software dedicated to the management of statistical data for a
-                group of companies.
+                Software dedicated to management of statistical data for a group
+                of companies.
               </p>
             </div>
             <div class="card-experience">
@@ -833,8 +958,8 @@
                 <span class="experience-time"> 2018 Apr - 2018 Nov </span>
               </h6>
               <p>
-                Software for the management of free virtual education and
-                generation of educational multimedia content.
+                Software to management of free virtual education and generation
+                of educational multimedia content.
               </p>
             </div>
           </div>
@@ -871,20 +996,18 @@
               </h6>
 
               <p>
-                Software for the management and operational control of a
-                company.
+                Software to management and operational control of a company.
               </p>
             </div>
           </div>
         </div>
-        <!-- <div class="projects-slide fade">3</div>
-            <div class="experience-slide fade">4</div> -->
       </div>
       <div class="bottom-indicators" style="text-align: center">
         <span class="dot_projects" onclick="currentSlideProjects(1)"></span>
         <span class="dot_projects" onclick="currentSlideProjects(2)"></span>
         <span class="dot_projects" onclick="currentSlideProjects(3)"></span>
         <span class="dot_projects" onclick="currentSlideProjects(4)"></span>
+        <span class="dot_projects" onclick="currentSlideProjects(5)"></span>
       </div>
     </section>
 
@@ -903,7 +1026,7 @@
             <div class="contact-row-info-two">
               <p>tinrios3@gmail.com</p>
               <p>jdmartinezrios.github.io</p>
-              <p>Cali Valle</p>
+              <p>Palmira Valle</p>
               <p>del Cauca. Colombia</p>
             </div>
           </div>
@@ -914,7 +1037,11 @@
           <h4><span>CONTACT ME</span></h4>
           <div class="skills-bar"></div>
 
-          <form id="#contact-form" action="https://formspree.io/f/xjvjpgav" method="POST">
+          <form
+            id="#contact-form"
+            action="https://formspree.io/f/xjvjpgav"
+            method="POST"
+          >
             <div class="form-row">
               <div class="form-group">
                 <input type="text" required name="name" placeholder="Name" />
@@ -1020,16 +1147,18 @@
           method: form.method,
           body: data,
           headers: {
-              'Accept': 'application/json'
-          }
-        }).then(response => {
-          form.reset();
-          window.alert("Thank you for contacting me!");
-        }).catch(error => {
-          window.alert("Error sending mail");
-        });
-      }
-      form.addEventListener("submit", handleSubmit)
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            form.reset();
+            window.alert("Thank you for contacting me!");
+          })
+          .catch((error) => {
+            window.alert("Error sending mail");
+          });
+      };
+      form.addEventListener("submit", handleSubmit);
     </script>
   </body>
 </html>
