@@ -111,9 +111,8 @@ header {
 
 .main-banner-info-job {
     position: relative;
-    grid-area: 2 / 1 / 3 / 2;
-    justify-self: start;
-    align-self: start;
+    display: flex;
+    justify-content: center;
 }
 
 .main-banner-info-name {
