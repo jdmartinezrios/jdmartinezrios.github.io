@@ -32,9 +32,9 @@ const TRANSLATIONS = {
     // Hero
     "hero.eyebrow": "Hola, mi nombre es",
     "hero.role": "Ingeniero de Software Senior",
-    "hero.roleDetail": "Full Stack · Web y Móvil",
+    "hero.roleDetail": "Full Stack · Web, Móvil e IA",
     "hero.summary":
-      "Construyo productos web y móviles de principio a fin — desde el diseño y la arquitectura hasta las pruebas y el despliegue — para empresas de salud, fintech y comercio electrónico en América. Actualmente creo soluciones de salud escalables en",
+      "Construyo productos web y móviles de principio a fin — desde el diseño y la arquitectura hasta las pruebas y el despliegue — para empresas de salud, fintech y comercio electrónico en América. Actualmente creo soluciones de salud escalables y flujos de trabajo con IA en",
     "hero.stat.years": "Años de experiencia",
     "hero.stat.projects": "Proyectos entregados",
     "hero.stat.companies": "Empresas y clientes",
@@ -57,7 +57,7 @@ const TRANSLATIONS = {
     "exp.epam.date": "Ene 2026 – Actual",
     "exp.epam.company": "EPAM Systems · Remoto",
     "exp.epam.desc":
-      "Construyo y mantengo soluciones escalables dentro de una iniciativa de Digital Factory para clientes internacionales del sector salud. Participo en todo el ciclo de vida del software — requerimientos, diseño del sistema, desarrollo, pruebas y despliegue — apoyando además esfuerzos de preventa/RFP y adoptando prácticas de ingeniería de soluciones con IA.",
+      "Construyo y mantengo soluciones escalables dentro de una iniciativa de Digital Factory para clientes internacionales del sector salud, participando en todo el ciclo de vida del software y apoyando esfuerzos de preventa/RFP. Desarrollo agentes de IA, integraciones MCP y flujos de trabajo y apps con IA usando Claude Code, las APIs de OpenAI y Gemini, y GitHub Copilot.",
 
     "exp.patagonian.role": "Ingeniero de Software",
     "exp.patagonian.date": "Ene 2021 – Ene 2026",
@@ -105,6 +105,7 @@ const TRANSLATIONS = {
       "Desarrollé aplicaciones web y móviles basadas en arquitecturas organizadas, escalables y sostenibles, cumpliendo los requerimientos de clientes de múltiples industrias.",
 
     // Skills
+    "skills.ai": "Ingeniería de IA y LLMs",
     "skills.mobile": "Móvil",
     "skills.cloud": "Nube y DevOps",
     "skills.databases": "Bases de datos",
@@ -133,6 +134,9 @@ const TRANSLATIONS = {
     "proj.banking.desc":
       "Plataforma bancaria que habilita procesamiento de préstamos, reportes financieros, extractos de cuenta y flujos de trabajo por roles.",
     "tag.ai": "IA",
+    "tag.aiAgents": "Agentes de IA",
+    "tag.aiWorkflows": "Flujos de trabajo y apps de IA",
+    "tag.mcp": "Integraciones MCP",
     "tag.travel": "Viajes",
     "tag.healthcare": "Salud",
     "tag.healthcare2": "Salud",
@@ -149,10 +153,9 @@ const TRANSLATIONS = {
     "edu.tech.place": "SENA — Centro de Biotecnología Industrial · 2016 – 2018",
     "edu.tech.note": "Promedio 4.5 · Graduado con distinción",
     "edu.systems.title": "Ingeniería de Sistemas",
-    "cert.angular": "Certificado de Angular (Intermedio)",
-    "cert.react": "REACT práctico: App web de gestión deportiva",
-    "cert.angularjs": "AngularJS práctico: Web app con Node.js y MongoDB",
-    "cert.git": "Curso profesional de Git y GitHub",
+    "cert.angular": "Certificado de Angular (Intermedio) — HackerRank · 2024",
+    "cert.javascript": "Certificado de JavaScript (Intermedio) — HackerRank · 2023",
+    "cert.git": "Curso profesional de Git y GitHub — Platzi · 2018",
     "lang.spanish": "Español — Nativo",
     "lang.english": "Inglés — Competencia profesional",
 
