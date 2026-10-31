@@ -73,39 +73,71 @@
 
     <link rel="stylesheet" href="./public/css/normalize.css" />
     <link rel="stylesheet" href="./public/css/main.css" />
+    <script defer src="./public/js/translations.js"></script>
     <script defer src="./public/js/main.js"></script>
   </head>
 
   <body>
-    <a class="skip-link" href="#experience">Skip to content</a>
+    <a class="skip-link" href="#experience" data-i18n="nav.skip"
+      >Skip to content</a
+    >
 
     <header class="site-header" id="site-header">
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#hero" class="nav-brand">JD<span class="accent">.</span></a>
 
+        <div class="nav-menu" id="nav-menu">
+          <a href="#experience" class="nav-link" data-i18n="nav.experience"
+            >Experience</a
+          >
+          <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+          <a href="#projects" class="nav-link" data-i18n="nav.projects"
+            >Projects</a
+          >
+          <a href="#education" class="nav-link" data-i18n="nav.education"
+            >Education</a
+          >
+          <a href="#contact" class="nav-link" data-i18n="nav.contact"
+            >Contact</a
+          >
+          <a
+            href="./public/assets/files/CV.pdf"
+            class="button button-outline nav-cta"
+            data-i18n="nav.resume"
+            download
+            >Resume</a
+          >
+        </div>
+
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <button
+            type="button"
+            class="lang-option"
+            data-lang="en"
+            aria-pressed="true"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            class="lang-option"
+            data-lang="es"
+            aria-pressed="false"
+          >
+            ES
+          </button>
+        </div>
+
         <button
           class="nav-toggle"
           id="nav-toggle"
           aria-label="Toggle navigation menu"
+          data-i18n-aria="nav.toggle"
           aria-expanded="false"
           aria-controls="nav-menu"
         >
           <span></span><span></span><span></span>
         </button>
-
-        <div class="nav-menu" id="nav-menu">
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#education" class="nav-link">Education</a>
-          <a href="#contact" class="nav-link">Contact</a>
-          <a
-            href="./public/assets/files/CV.pdf"
-            class="button button-outline nav-cta"
-            download
-            >Resume</a
-          >
-        </div>
       </nav>
     </header>
 
@@ -117,17 +149,24 @@
 
         <div class="hero-inner">
           <div class="hero-content">
-            <p class="hero-eyebrow">Hi, my name is</p>
+            <p class="hero-eyebrow" data-i18n="hero.eyebrow">Hi, my name is</p>
             <h1 class="hero-title">Juan David Mart&iacute;nez R&iacute;os</h1>
             <p class="hero-role">
-              <span class="gradient-text">Senior Software Engineer</span>
-              <span class="hero-role-detail">Full Stack &middot; Web &amp; Mobile</span>
+              <span class="gradient-text" data-i18n="hero.role"
+                >Senior Software Engineer</span
+              >
+              <span class="hero-role-detail" data-i18n="hero.roleDetail"
+                >Full Stack &middot; Web &amp; Mobile</span
+              >
             </p>
             <p class="hero-summary">
-              I build web and mobile products end to end &mdash; from design and
-              architecture to testing and deployment &mdash; for healthcare,
-              fintech, and e&#8209;commerce companies across the Americas.
-              Currently crafting scalable healthcare solutions at
+              <span data-i18n="hero.summary"
+                >I build web and mobile products end to end &mdash; from design
+                and architecture to testing and deployment &mdash; for
+                healthcare, fintech, and e&#8209;commerce companies across the
+                Americas. Currently crafting scalable healthcare solutions
+                at</span
+              >
               <a href="https://www.epam.com/" target="_blank" rel="noopener"
                 >EPAM Systems</a
               >.
@@ -138,15 +177,21 @@
                 <span class="stat-value"
                   ><span data-experience-years>9</span>+</span
                 >
-                <span class="stat-label">Years of experience</span>
+                <span class="stat-label" data-i18n="hero.stat.years"
+                  >Years of experience</span
+                >
               </li>
               <li>
                 <span class="stat-value">25+</span>
-                <span class="stat-label">Projects delivered</span>
+                <span class="stat-label" data-i18n="hero.stat.projects"
+                  >Projects delivered</span
+                >
               </li>
               <li>
                 <span class="stat-value">10+</span>
-                <span class="stat-label">Companies &amp; clients</span>
+                <span class="stat-label" data-i18n="hero.stat.companies"
+                  >Companies &amp; clients</span
+                >
               </li>
             </ul>
 
@@ -154,10 +199,16 @@
               <a
                 href="./public/assets/files/CV.pdf"
                 class="button button-primary"
+                data-i18n="hero.cta.resume"
                 download
                 >Download resume</a
               >
-              <a href="#contact" class="button button-outline">Get in touch</a>
+              <a
+                href="#contact"
+                class="button button-outline"
+                data-i18n="hero.cta.contact"
+                >Get in touch</a
+              >
             </div>
 
             <div class="hero-social">
@@ -166,6 +217,7 @@
                 target="_blank"
                 rel="noopener"
                 aria-label="LinkedIn profile"
+                data-i18n-aria="social.linkedin"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path
@@ -178,6 +230,7 @@
                 target="_blank"
                 rel="noopener"
                 aria-label="GitHub profile"
+                data-i18n-aria="social.github"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path
@@ -193,6 +246,7 @@
             <img
               src="./public/assets/imgs/profile.jpg"
               alt="Portrait of Juan David Martinez Rios"
+              data-i18n-alt="hero.photoAlt"
               width="320"
               height="320"
               fetchpriority="high"
@@ -200,7 +254,12 @@
           </div>
         </div>
 
-        <a href="#experience" class="scroll-hint" aria-label="Scroll to experience">
+        <a
+          href="#experience"
+          class="scroll-hint"
+          aria-label="Scroll to experience"
+          data-i18n-aria="hero.scrollHint"
+        >
           <span></span>
         </a>
       </section>
@@ -208,23 +267,28 @@
       <!-- ========================== Experience ========================== -->
       <section class="section" id="experience">
         <div class="section-inner">
-          <h2 class="section-title reveal">Experience</h2>
+          <h2 class="section-title reveal" data-i18n="section.experience">
+            Experience
+          </h2>
 
           <ol class="timeline">
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Senior Software Engineer</h3>
-                  <span class="timeline-date">Jan 2026 &ndash; Present</span>
+                  <h3 data-i18n="exp.epam.role">Senior Software Engineer</h3>
+                  <span class="timeline-date" data-i18n="exp.epam.date"
+                    >Jan 2026 &ndash; Present</span
+                  >
                 </div>
                 <a
                   class="timeline-company"
                   href="https://www.epam.com/"
                   target="_blank"
                   rel="noopener"
+                  data-i18n="exp.epam.company"
                   >EPAM Systems &middot; Remote</a
                 >
-                <p>
+                <p data-i18n="exp.epam.desc">
                   Building and maintaining scalable solutions within a Digital
                   Factory initiative serving international healthcare customers.
                   Engaged across the full SDLC &mdash; requirements, system
@@ -246,8 +310,10 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Software Engineer</h3>
-                  <span class="timeline-date">Jan 2021 &ndash; Jan 2026</span>
+                  <h3 data-i18n="exp.patagonian.role">Software Engineer</h3>
+                  <span class="timeline-date" data-i18n="exp.patagonian.date"
+                    >Jan 2021 &ndash; Jan 2026</span
+                  >
                 </div>
                 <a
                   class="timeline-company"
@@ -256,7 +322,7 @@
                   rel="noopener"
                   >Patagonian &middot; Cali, Colombia</a
                 >
-                <p>
+                <p data-i18n="exp.patagonian.desc">
                   Led the development of an AI&#8209;enhanced telemedicine
                   platform featuring a medical chatbot for pre&#8209;diagnosis,
                   prescription requests, clinical studies, online payments,
@@ -277,7 +343,7 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Frontend Engineer</h3>
+                  <h3 data-i18n="exp.tyba.role">Frontend Engineer</h3>
                   <span class="timeline-date">Nov 2022 &ndash; Feb 2023</span>
                 </div>
                 <a
@@ -285,9 +351,10 @@
                   href="https://tyba.com.co/"
                   target="_blank"
                   rel="noopener"
+                  data-i18n="exp.tyba.company"
                   >tyba &middot; Remote</a
                 >
-                <p>
+                <p data-i18n="exp.tyba.desc">
                   Built a multi&#8209;platform investment application for a
                   major Latin American investment group, integrating secure
                   authentication, real&#8209;time portfolio data, and financial
@@ -306,8 +373,10 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Full Stack Developer</h3>
-                  <span class="timeline-date">Mar 2021 &ndash; Aug 2022</span>
+                  <h3 data-i18n="exp.mooveit.role">Full Stack Developer</h3>
+                  <span class="timeline-date" data-i18n="exp.mooveit.date"
+                    >Mar 2021 &ndash; Aug 2022</span
+                  >
                 </div>
                 <a
                   class="timeline-company"
@@ -316,7 +385,7 @@
                   rel="noopener"
                   >Moove It &middot; Cali, Colombia</a
                 >
-                <p>
+                <p data-i18n="exp.mooveit.desc">
                   Led the development of a U.S. healthcare insurance platform,
                   including an admin panel, notification system, transactional
                   portal, and marketing landing page.
@@ -335,17 +404,20 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Full Stack Engineer</h3>
-                  <span class="timeline-date">Feb 2020 &ndash; Apr 2021</span>
+                  <h3 data-i18n="exp.saralt.role">Full Stack Engineer</h3>
+                  <span class="timeline-date" data-i18n="exp.saralt.date"
+                    >Feb 2020 &ndash; Apr 2021</span
+                  >
                 </div>
                 <a
                   class="timeline-company"
                   href="https://www.saraladiesteens.com/"
                   target="_blank"
                   rel="noopener"
+                  data-i18n="exp.saralt.company"
                   >Sara LT &middot; Remote</a
                 >
-                <p>
+                <p data-i18n="exp.saralt.desc">
                   Led the development of a multi&#8209;platform application for
                   real&#8209;time location&#8209;based offers, including a
                   transactional portal, user identity validation, and
@@ -364,7 +436,7 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Semi Sr Mobile Developer</h3>
+                  <h3 data-i18n="exp.bees2biz.role">Semi Sr Mobile Developer</h3>
                   <span class="timeline-date">Mar 2020 &ndash; Feb 2021</span>
                 </div>
                 <a
@@ -372,9 +444,10 @@
                   href="https://bees2biz.com/"
                   target="_blank"
                   rel="noopener"
+                  data-i18n="exp.bees2biz.company"
                   >Bees2biz &middot; Remote</a
                 >
-                <p>
+                <p data-i18n="exp.bees2biz.desc">
                   Designed and led an agricultural management app enabling
                   farmers to organize shifts, yields, crops, and production
                   cycles. Coordinated a remote team in the USA while leading the
@@ -393,7 +466,7 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Software Engineer</h3>
+                  <h3 data-i18n="exp.squareball.role">Software Engineer</h3>
                   <span class="timeline-date">May 2019 &ndash; Feb 2020</span>
                 </div>
                 <a
@@ -403,7 +476,7 @@
                   rel="noopener"
                   >Squareball Studios &middot; Cali, Colombia</a
                 >
-                <p>
+                <p data-i18n="exp.squareball.desc">
                   Developed a pharmacy connectivity platform unifying multiple
                   pharmacies, offering services and products to customers
                   through role&#8209;based dashboards, an admin panel, and
@@ -422,8 +495,10 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Software Analyst Developer</h3>
-                  <span class="timeline-date">Dec 2018 &ndash; Mar 2019</span>
+                  <h3 data-i18n="exp.gtc.role">Software Analyst Developer</h3>
+                  <span class="timeline-date" data-i18n="exp.gtc.date"
+                    >Dec 2018 &ndash; Mar 2019</span
+                  >
                 </div>
                 <a
                   class="timeline-company"
@@ -432,7 +507,7 @@
                   rel="noopener"
                   >GTC Corporation &middot; Cali, Colombia</a
                 >
-                <p>
+                <p data-i18n="exp.gtc.desc">
                   Developed a banking and loan management platform enabling loan
                   processing, financial reporting, account statements,
                   notifications, file generation, and role&#8209;based
@@ -451,8 +526,10 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Software Developer</h3>
-                  <span class="timeline-date">Apr 2018 &ndash; Oct 2018</span>
+                  <h3 data-i18n="exp.sena.role">Software Developer</h3>
+                  <span class="timeline-date" data-i18n="exp.sena.date"
+                    >Apr 2018 &ndash; Oct 2018</span
+                  >
                 </div>
                 <a
                   class="timeline-company"
@@ -461,7 +538,7 @@
                   rel="noopener"
                   >SENA &middot; Palmira, Colombia</a
                 >
-                <p>
+                <p data-i18n="exp.sena.desc">
                   Volunteer in the Sennova research and innovation project:
                   built a mobile application supporting the fruit and vegetable
                   trade for local producers.
@@ -478,11 +555,15 @@
             <li class="timeline-item reveal">
               <div class="timeline-card">
                 <div class="timeline-header">
-                  <h3>Freelance Software Developer</h3>
+                  <h3 data-i18n="exp.freelance.role">
+                    Freelance Software Developer
+                  </h3>
                   <span class="timeline-date">Sep 2017 &ndash; Feb 2020</span>
                 </div>
-                <span class="timeline-company">Self&#8209;employed &middot; Colombia</span>
-                <p>
+                <span class="timeline-company" data-i18n="exp.freelance.company"
+                  >Self&#8209;employed &middot; Colombia</span
+                >
+                <p data-i18n="exp.freelance.desc">
                   Developed web and mobile applications based on organized,
                   scalable, and sustainable architectures, meeting client
                   requirements across multiple industries.
@@ -503,7 +584,9 @@
       <!-- ============================ Skills ============================ -->
       <section class="section section-alt" id="skills">
         <div class="section-inner">
-          <h2 class="section-title reveal">Skills</h2>
+          <h2 class="section-title reveal" data-i18n="section.skills">
+            Skills
+          </h2>
 
           <div class="skills-grid">
             <article class="skill-card reveal">
@@ -533,7 +616,7 @@
             </article>
 
             <article class="skill-card reveal">
-              <h3>Mobile</h3>
+              <h3 data-i18n="skills.mobile">Mobile</h3>
               <ul class="chip-list">
                 <li>
                   <img src="./public/assets/imgs/flutter.svg" alt="" />Flutter
@@ -573,7 +656,7 @@
             </article>
 
             <article class="skill-card reveal">
-              <h3>Cloud &amp; DevOps</h3>
+              <h3 data-i18n="skills.cloud">Cloud &amp; DevOps</h3>
               <ul class="chip-list">
                 <li>AWS</li>
                 <li>
@@ -592,7 +675,7 @@
             </article>
 
             <article class="skill-card reveal">
-              <h3>Databases</h3>
+              <h3 data-i18n="skills.databases">Databases</h3>
               <ul class="chip-list">
                 <li>
                   <img src="./public/assets/imgs/postgresql.svg" alt="" />PostgreSQL
@@ -613,7 +696,7 @@
             </article>
 
             <article class="skill-card reveal">
-              <h3>Testing &amp; Quality</h3>
+              <h3 data-i18n="skills.testing">Testing &amp; Quality</h3>
               <ul class="chip-list">
                 <li>Jest</li>
                 <li>Cypress</li>
@@ -629,15 +712,19 @@
       <!-- =========================== Projects =========================== -->
       <section class="section" id="projects">
         <div class="section-inner">
-          <h2 class="section-title reveal">Highlighted projects</h2>
+          <h2 class="section-title reveal" data-i18n="section.projects">
+            Highlighted projects
+          </h2>
 
           <div class="projects-grid">
             <article class="project-card reveal">
               <div class="project-top">
-                <h3>AI Telemedicine Platform</h3>
+                <h3 data-i18n="proj.telemedicine.title">
+                  AI Telemedicine Platform
+                </h3>
                 <span class="project-date">2021 &ndash; 2026</span>
               </div>
-              <p>
+              <p data-i18n="proj.telemedicine.desc">
                 AI&#8209;enhanced telemedicine platform with a medical chatbot
                 for pre&#8209;diagnosis, prescription requests, clinical
                 studies, online payments, and multi&#8209;role dashboards.
@@ -645,7 +732,7 @@
               <ul class="tag-list">
                 <li>React</li>
                 <li>NestJS</li>
-                <li>AI</li>
+                <li data-i18n="tag.ai">AI</li>
               </ul>
             </article>
 
@@ -654,7 +741,7 @@
                 <h3>Tyba</h3>
                 <span class="project-date">2022 &ndash; 2023</span>
               </div>
-              <p>
+              <p data-i18n="proj.tyba.desc">
                 Fintech investment app for Latin America: investments, tax
                 insights, and tools to grow your money securely.
               </p>
@@ -670,14 +757,14 @@
                 <h3>Almundo</h3>
                 <span class="project-date">2022 &ndash; 2023</span>
               </div>
-              <p>
+              <p data-i18n="proj.almundo.desc">
                 Travel platform operating across Latin America offering
                 vacation plans, flights, lodging, and much more.
               </p>
               <ul class="tag-list">
                 <li>React</li>
                 <li>Next.js</li>
-                <li>Travel</li>
+                <li data-i18n="tag.travel">Travel</li>
               </ul>
             </article>
 
@@ -686,7 +773,7 @@
                 <h3>Suka ERP</h3>
                 <span class="project-date">2023</span>
               </div>
-              <p>
+              <p data-i18n="proj.suka.desc">
                 ERP system for managing shipping, receiving, and billing of
                 goods, operating mainly in the southern region of Latin
                 America.
@@ -703,7 +790,7 @@
                 <h3>Prescribe Wellness</h3>
                 <span class="project-date">2021 &ndash; 2022</span>
               </div>
-              <p>
+              <p data-i18n="proj.prescribe.desc">
                 U.S. healthcare platform that lets customers compare medical
                 plan options and find the nearest pharmacies based on their
                 location.
@@ -711,16 +798,16 @@
               <ul class="tag-list">
                 <li>React</li>
                 <li>GraphQL</li>
-                <li>Healthcare</li>
+                <li data-i18n="tag.healthcare">Healthcare</li>
               </ul>
             </article>
 
             <article class="project-card reveal">
               <div class="project-top">
-                <h3>Agro Management App</h3>
+                <h3 data-i18n="proj.agro.title">Agro Management App</h3>
                 <span class="project-date">2020 &ndash; 2021</span>
               </div>
-              <p>
+              <p data-i18n="proj.agro.desc">
                 Agricultural management app enabling farmers to organize
                 shifts, yields, crops, and production cycles with real&#8209;time
                 communication and role&#8209;based dashboards.
@@ -737,7 +824,7 @@
                 <h3>Sara LT</h3>
                 <span class="project-date">2020</span>
               </div>
-              <p>
+              <p data-i18n="proj.saralt.desc">
                 Private transportation service exclusively for women &mdash;
                 passenger and driver apps with real&#8209;time tracking and
                 identity validation.
@@ -745,7 +832,7 @@
               <ul class="tag-list">
                 <li>Flutter</li>
                 <li>Firebase</li>
-                <li>Mobility</li>
+                <li data-i18n="tag.mobility">Mobility</li>
               </ul>
             </article>
 
@@ -754,7 +841,7 @@
                 <h3>Pharmacy Connect</h3>
                 <span class="project-date">2019 &ndash; 2020</span>
               </div>
-              <p>
+              <p data-i18n="proj.pharmacy.desc">
                 Connectivity platform unifying multiple pharmacies with
                 role&#8209;based dashboards, an admin panel, and real&#8209;time
                 notifications.
@@ -762,23 +849,25 @@
               <ul class="tag-list">
                 <li>Angular</li>
                 <li>.NET Core</li>
-                <li>Healthcare</li>
+                <li data-i18n="tag.healthcare2">Healthcare</li>
               </ul>
             </article>
 
             <article class="project-card reveal">
               <div class="project-top">
-                <h3>Banking &amp; Loans Platform</h3>
+                <h3 data-i18n="proj.banking.title">
+                  Banking &amp; Loans Platform
+                </h3>
                 <span class="project-date">2018 &ndash; 2019</span>
               </div>
-              <p>
+              <p data-i18n="proj.banking.desc">
                 Banking platform enabling loan processing, financial reporting,
                 account statements, and role&#8209;based workflows.
               </p>
               <ul class="tag-list">
                 <li>Angular</li>
                 <li>Spring Boot</li>
-                <li>Banking</li>
+                <li data-i18n="tag.banking">Banking</li>
               </ul>
             </article>
           </div>
@@ -788,30 +877,34 @@
       <!-- ========================== Education =========================== -->
       <section class="section section-alt" id="education">
         <div class="section-inner">
-          <h2 class="section-title reveal">Education &amp; certifications</h2>
+          <h2 class="section-title reveal" data-i18n="section.education">
+            Education &amp; certifications
+          </h2>
 
           <div class="education-grid">
             <div class="education-column reveal">
-              <h3 class="column-title">Education</h3>
+              <h3 class="column-title" data-i18n="edu.title">Education</h3>
               <ul class="education-list">
                 <li>
-                  <h4>Software Engineering</h4>
+                  <h4 data-i18n="edu.software.title">Software Engineering</h4>
                   <p class="education-place">
                     Polit&eacute;cnico Grancolombiano &middot; 2023 &ndash; 2025
                   </p>
                 </li>
                 <li>
-                  <h4>Systems Analysis &amp; Development Technologist</h4>
-                  <p class="education-place">
+                  <h4 data-i18n="edu.tech.title">
+                    Systems Analysis &amp; Development Technologist
+                  </h4>
+                  <p class="education-place" data-i18n="edu.tech.place">
                     SENA &mdash; Industrial Biotechnology Center &middot; 2016
                     &ndash; 2018
                   </p>
-                  <p class="education-note">
+                  <p class="education-note" data-i18n="edu.tech.note">
                     GPA 4.5 &middot; Graduated with distinction
                   </p>
                 </li>
                 <li>
-                  <h4>Systems Engineering</h4>
+                  <h4 data-i18n="edu.systems.title">Systems Engineering</h4>
                   <p class="education-place">
                     Instituci&oacute;n Universitaria Antonio Jos&eacute; Camacho
                     &middot; 2015 &ndash; 2016
@@ -821,19 +914,27 @@
             </div>
 
             <div class="education-column reveal">
-              <h3 class="column-title">Certifications</h3>
+              <h3 class="column-title" data-i18n="edu.certs">Certifications</h3>
               <ul class="cert-list">
-                <li>Angular (Intermediate) Certificate</li>
+                <li data-i18n="cert.angular">Angular (Intermediate) Certificate</li>
                 <li>React Redux Esencial</li>
-                <li>REACT pr&aacute;ctico: Sports management web app</li>
-                <li>AngularJS pr&aacute;ctico: Web app with Node.js &amp; MongoDB</li>
-                <li>Professional Git &amp; GitHub course</li>
+                <li data-i18n="cert.react">
+                  REACT pr&aacute;ctico: Sports management web app
+                </li>
+                <li data-i18n="cert.angularjs">
+                  AngularJS pr&aacute;ctico: Web app with Node.js &amp; MongoDB
+                </li>
+                <li data-i18n="cert.git">Professional Git &amp; GitHub course</li>
               </ul>
 
-              <h3 class="column-title languages-title">Languages</h3>
+              <h3 class="column-title languages-title" data-i18n="edu.languages">
+                Languages
+              </h3>
               <ul class="cert-list">
-                <li>Spanish &mdash; Native</li>
-                <li>English &mdash; Professional working proficiency</li>
+                <li data-i18n="lang.spanish">Spanish &mdash; Native</li>
+                <li data-i18n="lang.english">
+                  English &mdash; Professional working proficiency
+                </li>
               </ul>
             </div>
           </div>
@@ -843,22 +944,28 @@
       <!-- =========================== Contact ============================ -->
       <section class="section" id="contact">
         <div class="section-inner">
-          <h2 class="section-title reveal">Get in touch</h2>
+          <h2 class="section-title reveal" data-i18n="section.contact">
+            Get in touch
+          </h2>
 
           <div class="contact-grid">
             <div class="contact-info reveal">
-              <p class="contact-lead">
+              <p class="contact-lead" data-i18n="contact.lead">
                 I&rsquo;m always open to discussing new projects, opportunities,
                 or just talking tech. Drop me a message and I&rsquo;ll get back
                 to you as soon as I can.
               </p>
               <ul class="contact-details">
                 <li>
-                  <span class="contact-label">Location</span>
+                  <span class="contact-label" data-i18n="contact.location"
+                    >Location</span
+                  >
                   <span>Valle del Cauca, Colombia</span>
                 </li>
                 <li>
-                  <span class="contact-label">Website</span>
+                  <span class="contact-label" data-i18n="contact.website"
+                    >Website</span
+                  >
                   <a href="https://jdmartinezrios.github.io/"
                     >jdmartinezrios.github.io</a
                   >
@@ -892,45 +999,61 @@
             >
               <div class="form-row">
                 <label class="form-group">
-                  <span class="visually-hidden">Name</span>
+                  <span class="visually-hidden" data-i18n="form.name"
+                    >Name</span
+                  >
                   <input
                     type="text"
                     required
                     name="name"
                     placeholder="Name"
+                    data-i18n-placeholder="form.name"
                     autocomplete="name"
                   />
                 </label>
                 <label class="form-group">
-                  <span class="visually-hidden">Email</span>
+                  <span class="visually-hidden" data-i18n="form.email"
+                    >Email</span
+                  >
                   <input
                     type="email"
                     required
                     name="email"
                     placeholder="Email"
+                    data-i18n-placeholder="form.email"
                     autocomplete="email"
                   />
                 </label>
               </div>
               <label class="form-group">
-                <span class="visually-hidden">Subject</span>
+                <span class="visually-hidden" data-i18n="form.subject"
+                  >Subject</span
+                >
                 <input
                   type="text"
                   required
                   name="subject"
                   placeholder="Subject"
+                  data-i18n-placeholder="form.subject"
                 />
               </label>
               <label class="form-group">
-                <span class="visually-hidden">Message</span>
+                <span class="visually-hidden" data-i18n="form.message"
+                  >Message</span
+                >
                 <textarea
                   required
                   name="message"
                   rows="5"
                   placeholder="Message"
+                  data-i18n-placeholder="form.message"
                 ></textarea>
               </label>
-              <button type="submit" class="button button-primary form-submit">
+              <button
+                type="submit"
+                class="button button-primary form-submit"
+                data-i18n="form.submit"
+              >
                 Send message
               </button>
               <p
@@ -949,7 +1072,9 @@
       <div class="footer-inner">
         <p>
           &copy; <span id="year"></span> Juan David Mart&iacute;nez R&iacute;os.
-          Built with plain HTML, CSS &amp; JavaScript.
+          <span data-i18n="footer.built"
+            >Built with plain HTML, CSS &amp; JavaScript.</span
+          >
         </p>
         <div class="footer-social">
           <a
@@ -957,6 +1082,7 @@
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn profile"
+            data-i18n-aria="social.linkedin"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
@@ -969,6 +1095,7 @@
             target="_blank"
             rel="noopener"
             aria-label="GitHub profile"
+            data-i18n-aria="social.github"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path

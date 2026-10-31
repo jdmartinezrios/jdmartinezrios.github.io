@@ -1,8 +1,18 @@
 "use strict";
 
 const CAREER_START = new Date(2017, 8, 1); // September 2017 — first freelance role
+const LANG_STORAGE_KEY = "preferred-lang";
+
+/**
+ * English defaults harvested from the HTML on load, so the markup stays the
+ * single source of truth for the default language. Spanish comes from
+ * TRANSLATIONS (translations.js).
+ */
+const englishStrings = { text: {}, placeholder: {}, aria: {}, alt: {}, title: "" };
+let currentLang = "en";
 
 document.addEventListener("DOMContentLoaded", () => {
+  setupLanguageSwitch();
   renderExperienceYears();
   renderCurrentYear();
   setupHeaderScrollState();
@@ -11,6 +21,68 @@ document.addEventListener("DOMContentLoaded", () => {
   setupActiveNavHighlight();
   setupContactForm();
 });
+
+/* ---------------------------------- i18n ---------------------------------- */
+
+function setupLanguageSwitch() {
+  harvestEnglishStrings();
+
+  const saved = localStorage.getItem(LANG_STORAGE_KEY);
+  const browserPrefersSpanish = (navigator.language || "")
+    .toLowerCase()
+    .startsWith("es");
+  applyLanguage(saved || (browserPrefersSpanish ? "es" : "en"));
+
+  document.querySelectorAll(".lang-option").forEach((button) =>
+    button.addEventListener("click", () => applyLanguage(button.dataset.lang))
+  );
+}
+
+function harvestEnglishStrings() {
+  englishStrings.title = document.title;
+  const harvest = (attribute, store, read) =>
+    document.querySelectorAll(`[${attribute}]`).forEach((el) => {
+      const key = el.getAttribute(attribute);
+      if (!(key in store)) store[key] = read(el);
+    });
+
+  harvest("data-i18n", englishStrings.text, (el) => el.textContent.trim());
+  harvest("data-i18n-placeholder", englishStrings.placeholder, (el) => el.placeholder);
+  harvest("data-i18n-aria", englishStrings.aria, (el) => el.getAttribute("aria-label"));
+  harvest("data-i18n-alt", englishStrings.alt, (el) => el.alt);
+}
+
+function applyLanguage(lang) {
+  currentLang = lang === "es" ? "es" : "en";
+  localStorage.setItem(LANG_STORAGE_KEY, currentLang);
+  document.documentElement.lang = currentLang;
+  document.title =
+    currentLang === "es" ? TRANSLATIONS.es["meta.title"] : englishStrings.title;
+
+  const lookup = (key, store) =>
+    currentLang === "es" ? TRANSLATIONS.es[key] : store[key];
+  const translate = (attribute, store, write) =>
+    document.querySelectorAll(`[${attribute}]`).forEach((el) => {
+      const value = lookup(el.getAttribute(attribute), store);
+      if (value) write(el, value);
+    });
+
+  translate("data-i18n", englishStrings.text, (el, v) => (el.textContent = v));
+  translate("data-i18n-placeholder", englishStrings.placeholder, (el, v) => (el.placeholder = v));
+  translate("data-i18n-aria", englishStrings.aria, (el, v) => el.setAttribute("aria-label", v));
+  translate("data-i18n-alt", englishStrings.alt, (el, v) => (el.alt = v));
+
+  document.querySelectorAll(".lang-option").forEach((button) => {
+    const active = button.dataset.lang === currentLang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+/** Looks up a runtime string (no DOM element) in the current language. */
+function t(key) {
+  return TRANSLATIONS[currentLang][key] ?? TRANSLATIONS.en[key] ?? key;
+}
 
 /* ------------------------------ Dynamic text ------------------------------ */
 
@@ -123,7 +195,7 @@ function setupContactForm() {
     event.preventDefault();
     const submitButton = form.querySelector("[type='submit']");
     submitButton.disabled = true;
-    setFormStatus(status, "Sending…", "");
+    setFormStatus(status, t("form.sending"), "");
 
     try {
       const response = await fetch(form.action, {
@@ -133,13 +205,9 @@ function setupContactForm() {
       });
       if (!response.ok) throw new Error(`Request failed: ${response.status}`);
       form.reset();
-      setFormStatus(status, "Thanks for reaching out! I'll reply soon.", "success");
+      setFormStatus(status, t("form.success"), "success");
     } catch (error) {
-      setFormStatus(
-        status,
-        "Something went wrong. Please try again or reach me on LinkedIn.",
-        "error"
-      );
+      setFormStatus(status, t("form.error"), "error");
     } finally {
       submitButton.disabled = false;
     }
