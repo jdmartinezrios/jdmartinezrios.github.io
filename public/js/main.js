@@ -1,153 +1,152 @@
-var indexSlider = 1;
-var indexSliderSkills = 1;
-var indexSliderProjects = 1;
-var timer, timerSkills, timerProjects;
+"use strict";
 
-(() => onInit())();
+const CAREER_START = new Date(2017, 8, 1); // September 2017 — first freelance role
 
-function onInit() {
-  scrollUp();
-  setTimeToWebSite();
-  showSlides(indexSlider);
-  showSlidesSkills(indexSliderSkills);
-  showSlidesProjects(indexSliderProjects);
-  initTimer();
-  initTimerSKills();
-  initTimerProjects();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  renderExperienceYears();
+  renderCurrentYear();
+  setupHeaderScrollState();
+  setupMobileNav();
+  setupScrollReveal();
+  setupActiveNavHighlight();
+  setupContactForm();
+});
 
-function showSlides(index) {
-  var i;
-  const slides = document.getElementsByClassName("experience-slide");
-  const dots = document.getElementsByClassName("dot");
+/* ------------------------------ Dynamic text ------------------------------ */
 
-  if (index > slides.length) indexSlider = 1;
-  if (index < 1) indexSlider = slides.length;
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[indexSlider - 1].style.display = "block";
-  dots[indexSlider - 1].className += " active";
-}
-
-function plusSlides(value) {
-  closeTimer();
-  showSlides((indexSlider += value));
-}
-
-function currentSlide(value) {
-  closeTimer();
-  showSlides((indexSlider = value));
-}
-
-function setTimeToWebSite() {
-  const date = new Date();
-  const year = document.getElementById("year");
-  year.innerHTML = date.getFullYear();
-}
-
-function initTimer() {
-  timer = setInterval(() => plusSlides(1), 10000);
-}
-
-function closeTimer() {
-  clearInterval(timer);
-  initTimer();
-}
-
-function showSlidesSkills(index) {
-  var i;
-  const slides = document.getElementsByClassName("skills-slide");
-  const dots = document.getElementsByClassName("dot_skilss");
-
-  if (index > slides.length) indexSliderSkills = 1;
-  if (index < 1) indexSliderSkills = slides.length;
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active_skills", "");
-  }
-  slides[indexSliderSkills - 1].style.display = "block";
-  dots[indexSliderSkills - 1].className += " active_skills";
-}
-
-function plusSlidesSKills(value) {
-  closeTimerSKills();
-  showSlidesSkills((indexSliderSkills += value));
-}
-
-function currentSlideSKills(value) {
-  closeTimerSKills();
-  showSlidesSkills((indexSliderSkills = value));
-}
-
-function initTimerSKills() {
-  timerSkills = setInterval(() => plusSlidesSKills(1), 10000);
-}
-
-function closeTimerSKills() {
-  clearInterval(timerSkills);
-  initTimerSKills();
-}
-
-function scrollUp() {
-  const main = document.getElementById("main-container");
-  const home = document.getElementById("home");
-  home.addEventListener(
-    "click",
-    (e) => {
-      main.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    },
-    false
+function renderExperienceYears() {
+  const years = Math.floor(
+    (Date.now() - CAREER_START.getTime()) / (1000 * 60 * 60 * 24 * 365.25)
   );
+  document
+    .querySelectorAll("[data-experience-years]")
+    .forEach((el) => (el.textContent = years));
 }
 
-function showSlidesProjects(index) {
-  var i;
-  const slides = document.getElementsByClassName("projects-slide");
-  const dots = document.getElementsByClassName("dot_projects");
+function renderCurrentYear() {
+  const el = document.getElementById("year");
+  if (el) el.textContent = new Date().getFullYear();
+}
 
-  if (index > slides.length) indexSliderProjects = 1;
-  if (index < 1) indexSliderProjects = slides.length;
+/* --------------------------------- Header --------------------------------- */
 
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+function setupHeaderScrollState() {
+  const header = document.getElementById("site-header");
+  const update = () => header.classList.toggle("scrolled", window.scrollY > 24);
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+}
+
+function setupMobileNav() {
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+
+  const setOpen = (open) => {
+    toggle.classList.toggle("open", open);
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+
+  toggle.addEventListener("click", () =>
+    setOpen(!menu.classList.contains("open"))
+  );
+
+  // Close the menu when a link is chosen or when clicking outside of it.
+  menu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setOpen(false);
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".site-nav")) setOpen(false);
+  });
+}
+
+/* ------------------------------ Scroll effects ----------------------------- */
+
+function setupScrollReveal() {
+  const targets = document.querySelectorAll(".reveal");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    targets.forEach((el) => el.classList.add("visible"));
+    return;
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active_projects", "");
-  }
-  slides[indexSliderProjects - 1].style.display = "block";
-  dots[indexSliderProjects - 1].className += " active_projects";
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  targets.forEach((el) => observer.observe(el));
 }
 
-function plusSlidesProjects(value) {
-  closeTimerProjects();
-  showSlidesProjects((indexSliderProjects += value));
+function setupActiveNavHighlight() {
+  const links = [...document.querySelectorAll(".nav-link")];
+  const sections = links
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((link) =>
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${entry.target.id}`
+          )
+        );
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px" }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 }
 
-function currentSlideProjects(value) {
-  closeTimerProjects();
-  showSlidesProjects((indexSliderProjects = value));
+/* --------------------------------- Contact -------------------------------- */
+
+function setupContactForm() {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const submitButton = form.querySelector("[type='submit']");
+    submitButton.disabled = true;
+    setFormStatus(status, "Sending…", "");
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      form.reset();
+      setFormStatus(status, "Thanks for reaching out! I'll reply soon.", "success");
+    } catch (error) {
+      setFormStatus(
+        status,
+        "Something went wrong. Please try again or reach me on LinkedIn.",
+        "error"
+      );
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
 }
 
-function initTimerProjects() {
-  timerProjects = setInterval(() => plusSlidesProjects(1), 10000);
-}
-
-function closeTimerProjects() {
-  clearInterval(timerProjects);
-  initTimerProjects();
+function setFormStatus(statusEl, message, state) {
+  statusEl.textContent = message;
+  statusEl.className = state ? `form-status ${state}` : "form-status";
 }

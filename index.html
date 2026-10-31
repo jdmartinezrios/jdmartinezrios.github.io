@@ -1,1161 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Experience time script -->
-    <script>
-      let meta_counter = 0;
-      const MAX_META = 2;
-      const start_date = new Date(2017, 9, 20);
-      const diff_ms = Date.now() - start_date.getTime();
-      const age_dt = new Date(diff_ms);
-      const years_job = Math.abs(age_dt.getUTCFullYear() - 1970);
-      while (meta_counter < MAX_META) {
-        meta_counter++;
-        const link = document.createElement("meta");
-        link.setAttribute(
-          "property",
-          meta_counter == 2 ? "og:description" : "description"
-        );
-        link.content = `I am a software engineer with more than ${years_job} years of coding experience and development process experience. With success in all phases of the development process, design, construction and testing. Work collaboratively and freelance within cross- functional teams to identify and resolve bugs and functionality issues. Strong technical analysis skills and development processes.`;
-        document.getElementsByTagName("head")[0].appendChild(link);
-      }
-    </script>
-    <!-- ********************** -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juan David Martinez Rios | Software Engineer</title>
+    <title>Juan David Martinez Rios | Senior Software Engineer</title>
+
+    <meta
+      name="description"
+      content="Juan David Martinez Rios — Senior Software Engineer with 9+ years of experience building web and mobile products end to end for healthcare, fintech, and e-commerce companies across the Americas. React, Next.js, Angular, Flutter, Node.js, NestJS, AWS."
+    />
     <meta
       name="keywords"
-      content="Juan David Martinez Rios, Juan David Martinez, Juan David Rios, Juan Martinez, Juan Rios"
+      content="Juan David Martinez Rios, Senior Software Engineer, Full Stack Developer, React, Next.js, Angular, Flutter, Node.js, Colombia"
     />
     <link rel="canonical" href="https://jdmartinezrios.github.io/" />
-    <link
-      rel="alternate"
-      media="handheld"
-      href="https://jdmartinezrios.github.io/my_portfolio/"
-    />
-    <meta name="viewport" content="width=max-device-width, user-scalable=yes" />
-    <meta
-      name="twitter:image:src"
-      content="https://avatars.githubusercontent.com/u/29514868?v=4?s=400"
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/29514868?v=4?s=400"
-    />
+
+    <!-- Open Graph / Twitter -->
     <meta property="og:site_name" content="Juan David Martinez Rios" />
     <meta property="og:type" content="profile" />
     <meta
       property="og:title"
-      content="Juan David Martinez Rios - Software Engineer"
+      content="Juan David Martinez Rios — Senior Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Senior Software Engineer with 9+ years of experience building web and mobile products for healthcare, fintech, and e-commerce companies across the Americas."
     />
     <meta property="og:url" content="https://jdmartinezrios.github.io/" />
+    <meta
+      property="og:image"
+      content="https://jdmartinezrios.github.io/public/assets/imgs/profile.jpg"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:image"
+      content="https://jdmartinezrios.github.io/public/assets/imgs/profile.jpg"
+    />
     <meta property="profile:username" content="jdmartinezrios" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <link rel="stylesheet" href="./public/css/main.css" text="css" />
-    <link rel="stylesheet" href="./public/css/normailize.css" text="css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Juan David Martinez Rios",
+        "jobTitle": "Senior Software Engineer",
+        "url": "https://jdmartinezrios.github.io/",
+        "image": "https://jdmartinezrios.github.io/public/assets/imgs/profile.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Valle del Cauca",
+          "addressCountry": "Colombia"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/juan-david-martinez-rios",
+          "https://github.com/jdmartinezrios"
+        ]
+      }
+    </script>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./public/assets/imgs/favicon.svg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./public/css/normalize.css" />
+    <link rel="stylesheet" href="./public/css/main.css" />
     <script defer src="./public/js/main.js"></script>
   </head>
 
   <body>
-    <header id="header">
-      <nav>
-        <a id="home">Home</a>
-        <a href="./public/assets/files/CV.pdf" download
-          >Download my full resume</a
+    <a class="skip-link" href="#experience">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#hero" class="nav-brand">JD<span class="accent">.</span></a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
         >
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a
+            href="./public/assets/files/CV.pdf"
+            class="button button-outline nav-cta"
+            download
+            >Resume</a
+          >
+        </div>
       </nav>
     </header>
-    <section class="main-container" id="main-container">
-      <div class="main-wrapper">
-        <div class="main-banner-info">
-          <div class="main-banner-info-name">
-            <h1>Juan David Martinez Rios</h1>
+
+    <main>
+      <!-- ============================= Hero ============================= -->
+      <section class="hero" id="hero">
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <div class="hero-content">
+            <p class="hero-eyebrow">Hi, my name is</p>
+            <h1 class="hero-title">Juan David Mart&iacute;nez R&iacute;os</h1>
+            <p class="hero-role">
+              <span class="gradient-text">Senior Software Engineer</span>
+              <span class="hero-role-detail">Full Stack &middot; Web &amp; Mobile</span>
+            </p>
+            <p class="hero-summary">
+              I build web and mobile products end to end &mdash; from design and
+              architecture to testing and deployment &mdash; for healthcare,
+              fintech, and e&#8209;commerce companies across the Americas.
+              Currently crafting scalable healthcare solutions at
+              <a href="https://www.epam.com/" target="_blank" rel="noopener"
+                >EPAM Systems</a
+              >.
+            </p>
+
+            <ul class="hero-stats" aria-label="Career highlights">
+              <li>
+                <span class="stat-value"
+                  ><span data-experience-years>9</span>+</span
+                >
+                <span class="stat-label">Years of experience</span>
+              </li>
+              <li>
+                <span class="stat-value">25+</span>
+                <span class="stat-label">Projects delivered</span>
+              </li>
+              <li>
+                <span class="stat-value">10+</span>
+                <span class="stat-label">Companies &amp; clients</span>
+              </li>
+            </ul>
+
+            <div class="hero-actions">
+              <a
+                href="./public/assets/files/CV.pdf"
+                class="button button-primary"
+                download
+                >Download resume</a
+              >
+              <a href="#contact" class="button button-outline">Get in touch</a>
+            </div>
+
+            <div class="hero-social">
+              <a
+                href="https://www.linkedin.com/in/juan-david-martinez-rios"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn profile"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/jdmartinezrios"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub profile"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 20.86c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .3"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="main-banner-info-job">
-            <span class="main-info-job">software Engineer</span>
+
+          <div class="hero-photo">
+            <div class="hero-photo-ring" aria-hidden="true"></div>
+            <img
+              src="./public/assets/imgs/profile.jpg"
+              alt="Portrait of Juan David Martinez Rios"
+              width="320"
+              height="320"
+              fetchpriority="high"
+            />
           </div>
         </div>
-      </div>
-      <div class="avatar_profile"></div>
-    </section>
-    <section class="banner-experience-container">
-      <div class="experience-title">
-        <h4><span>Experience</span></h4>
-        <div class="experience-bar"></div>
-      </div>
-      <div class="carousel-banner">
-        <div class="prev-button" onclick="plusSlides(-1)">
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            viewBox="0 0 39 11"
-            enable-background="new 0 0 39 11"
-          >
-            <polygon
-              points="33.5,0 32.8,0.7 37.1,5 0,5 0,6 37.1,6 32.8,10.3 33.5,11 39,5.5 "
-            ></polygon>
-          </svg>
-        </div>
-        <div class="container-slides">
-          <div class="experience-slide fade">
-            <div class="experience-slide-body">
-              <div class="card-experience">
-                <h6>
-                  <span> Software Engineer </span>
-                </h6>
+
+        <a href="#experience" class="scroll-hint" aria-label="Scroll to experience">
+          <span></span>
+        </a>
+      </section>
+
+      <!-- ========================== Experience ========================== -->
+      <section class="section" id="experience">
+        <div class="section-inner">
+          <h2 class="section-title reveal">Experience</h2>
+
+          <ol class="timeline">
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Senior Software Engineer</h3>
+                  <span class="timeline-date">Jan 2026 &ndash; Present</span>
+                </div>
                 <a
+                  class="timeline-company"
+                  href="https://www.epam.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >EPAM Systems &middot; Remote</a
+                >
+                <p>
+                  Building and maintaining scalable solutions within a Digital
+                  Factory initiative serving international healthcare customers.
+                  Engaged across the full SDLC &mdash; requirements, system
+                  design, development, testing, and deployment &mdash; while
+                  supporting pre&#8209;sale/RFP efforts and adopting AI solution
+                  engineering practices.
+                </p>
+                <ul class="tag-list">
+                  <li>TypeScript</li>
+                  <li>Next.js</li>
+                  <li>NestJS</li>
+                  <li>PostgreSQL</li>
+                  <li>AWS</li>
+                  <li>Argo CI/CD</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Software Engineer</h3>
+                  <span class="timeline-date">Jan 2021 &ndash; Jan 2026</span>
+                </div>
+                <a
+                  class="timeline-company"
                   href="https://patagonian.com/"
-                  class="job-enterpise"
                   target="_blank"
-                  >@PATAGONIAN</a
+                  rel="noopener"
+                  >Patagonian &middot; Cali, Colombia</a
                 >
-                <h6>
-                  <span class="experience-time"> 2021 Jan - Present </span>
-                </h6>
                 <p>
-                  Plan and develop multiplatform mobile applications using
-                  technologies such as Angular, ReactJs, Flutter, Phyton,
-                  CircleCi, Jira, Docker according to guidelines proposed by the
-                  company.
+                  Led the development of an AI&#8209;enhanced telemedicine
+                  platform featuring a medical chatbot for pre&#8209;diagnosis,
+                  prescription requests, clinical studies, online payments,
+                  real&#8209;time notifications, multi&#8209;role dashboards,
+                  and a complete admin portal.
                 </p>
+                <ul class="tag-list">
+                  <li>React</li>
+                  <li>Next.js</li>
+                  <li>React Native</li>
+                  <li>NestJS</li>
+                  <li>Flutter</li>
+                  <li>AWS</li>
+                </ul>
               </div>
-              <div class="card-experience">
-                <h6>
-                  <span> Software Engineer </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Frontend Engineer</h3>
+                  <span class="timeline-date">Nov 2022 &ndash; Feb 2023</span>
+                </div>
                 <a
+                  class="timeline-company"
                   href="https://tyba.com.co/"
-                  class="job-enterpise"
                   target="_blank"
-                  >@TYBA</a
+                  rel="noopener"
+                  >tyba &middot; Remote</a
                 >
-                <h6>
-                  <span class="experience-time"> 2022 Nov - 2023 Feb </span>
-                </h6>
                 <p>
-                  Planned and developed multi platform applications using
-                  technologies such as Flutter, NodeJS, Firebase, AWS according
-                  to guidelines proposed by the company.
+                  Built a multi&#8209;platform investment application for a
+                  major Latin American investment group, integrating secure
+                  authentication, real&#8209;time portfolio data, and financial
+                  dashboards.
                 </p>
+                <ul class="tag-list">
+                  <li>Flutter</li>
+                  <li>Node.js</li>
+                  <li>NestJS</li>
+                  <li>Firebase</li>
+                  <li>AWS</li>
+                </ul>
               </div>
-              <div class="card-experience">
-                <h6>
-                  <span> Software Engineer </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Full Stack Developer</h3>
+                  <span class="timeline-date">Mar 2021 &ndash; Aug 2022</span>
+                </div>
                 <a
+                  class="timeline-company"
                   href="https://qubika.com/"
-                  class="job-enterpise"
                   target="_blank"
-                  >@MOOVE-IT</a
+                  rel="noopener"
+                  >Moove It &middot; Cali, Colombia</a
                 >
-                <h6>
-                  <span class="experience-time"> 2021 Mar - 2022 Aug </span>
-                </h6>
                 <p>
-                  Developed program logic for new applications based on fresh
-                  coding or revamped logic from existing applications using
-                  technologies such as ReactJS, Redux, Cypress, Jest, GraphQL,
-                  Heroku, .NET Core, AWS according to guidelines proposed by the
-                  company.
+                  Led the development of a U.S. healthcare insurance platform,
+                  including an admin panel, notification system, transactional
+                  portal, and marketing landing page.
                 </p>
+                <ul class="tag-list">
+                  <li>React</li>
+                  <li>React Query</li>
+                  <li>GraphQL</li>
+                  <li>Cypress</li>
+                  <li>Node.js</li>
+                  <li>AWS</li>
+                </ul>
               </div>
-            </div>
-          </div>
-          <div class="experience-slide fade">
-            <div class="experience-slide-body">
-              <div class="card-experience">
-                <h6>
-                  <span> Software Engineer </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Full Stack Engineer</h3>
+                  <span class="timeline-date">Feb 2020 &ndash; Apr 2021</span>
+                </div>
                 <a
+                  class="timeline-company"
                   href="https://www.saraladiesteens.com/"
-                  class="job-enterpise"
                   target="_blank"
-                  >@SARALT</a
+                  rel="noopener"
+                  >Sara LT &middot; Remote</a
                 >
-                <h6>
-                  <span class="experience-time"> 2020 Feb - 2021 Apr </span>
-                </h6>
                 <p>
-                  Develop cross-platform mobile applications using technologies
-                  such as Flutter, NodeJs, Firebase according to guidelines
-                  proposed by the company.
+                  Led the development of a multi&#8209;platform application for
+                  real&#8209;time location&#8209;based offers, including a
+                  transactional portal, user identity validation, and
+                  multi&#8209;role experiences.
                 </p>
+                <ul class="tag-list">
+                  <li>Flutter</li>
+                  <li>React</li>
+                  <li>GraphQL</li>
+                  <li>Firebase</li>
+                  <li>AWS</li>
+                </ul>
               </div>
-              <div class="card-experience">
-                <h6>
-                  <span> Semi Sr Mobile Dev </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Semi Sr Mobile Developer</h3>
+                  <span class="timeline-date">Mar 2020 &ndash; Feb 2021</span>
+                </div>
                 <a
+                  class="timeline-company"
                   href="https://bees2biz.com/"
-                  class="job-enterpise"
                   target="_blank"
-                  >@BESS2BIZ</a
+                  rel="noopener"
+                  >Bees2biz &middot; Remote</a
                 >
-                <h6>
-                  <span class="experience-time"> 2020 Mar - 2021 Feb </span>
-                </h6>
                 <p>
-                  Lead the mobile area and develop together with my development
-                  team cross-platform(Flutter) mobile applications that
-                  integrate API Rest - NodeJs/MongoDB together with blockchain
-                  and Fireabase.
+                  Designed and led an agricultural management app enabling
+                  farmers to organize shifts, yields, crops, and production
+                  cycles. Coordinated a remote team in the USA while leading the
+                  mobile area.
                 </p>
+                <ul class="tag-list">
+                  <li>Flutter</li>
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>MongoDB</li>
+                  <li>Firebase</li>
+                </ul>
               </div>
-              <div class="card-experience">
-                <h6>
-                  <span> Software Engineer </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Software Engineer</h3>
+                  <span class="timeline-date">May 2019 &ndash; Feb 2020</span>
+                </div>
                 <a
+                  class="timeline-company"
                   href="https://www.squareballstudios.com/"
-                  class="job-enterpise"
                   target="_blank"
-                  >@SQUAREBALL</a
+                  rel="noopener"
+                  >Squareball Studios &middot; Cali, Colombia</a
                 >
-                <h6>
-                  <span class="experience-time"> 2019 May - 2020 Feb </span>
-                </h6>
                 <p>
-                  Develop and lead the process of cross-platform mobile and web
-                  applications using high-level technologies such as Angular,
-                  .Net Core, Xamarin, Flutter, Firebase.
+                  Developed a pharmacy connectivity platform unifying multiple
+                  pharmacies, offering services and products to customers
+                  through role&#8209;based dashboards, an admin panel, and
+                  real&#8209;time notifications.
                 </p>
+                <ul class="tag-list">
+                  <li>Angular</li>
+                  <li>Xamarin</li>
+                  <li>Flutter</li>
+                  <li>ASP.NET Core</li>
+                  <li>MySQL</li>
+                </ul>
               </div>
-            </div>
-          </div>
-          <div class="experience-slide fade">
-            <div class="experience-slide-body">
-              <div class="card-experience">
-                <h6>
-                  <span> Software Eng Freelance </span>
-                </h6>
-                <a href="" class="job-enterpise">@JDMARTINEZ</a>
-                <h6>
-                  <span class="experience-time"> 2016 Aug - Present </span>
-                </h6>
-                <p>
-                  Develop and lead the process of cross-platform mobile and web
-                  applications using high-level technologies such as Angular,
-                  NodeJs, Ionic, Flutter, Laravel, JavaEE, ReactJS.
-                </p>
-              </div>
-              <div class="card-experience">
-                <h6>
-                  <span> Software Analyst </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Software Analyst Developer</h3>
+                  <span class="timeline-date">Dec 2018 &ndash; Mar 2019</span>
+                </div>
                 <a
-                  href="https://gtccorporation.com/index.php/home/"
-                  class="job-enterpise"
+                  class="timeline-company"
+                  href="https://gtccorporation.com/"
                   target="_blank"
-                  >@GTC CORPORATION</a
+                  rel="noopener"
+                  >GTC Corporation &middot; Cali, Colombia</a
                 >
-                <h6>
-                  <span class="experience-time"> 2018 Dec - 2019 Apr </span>
-                </h6>
                 <p>
-                  Development and analysis of multiplatform web and mobile
-                  applications using high-level technologies such as Angular,
-                  Ionic, JavaEE, Spring boot, OracleDB.
+                  Developed a banking and loan management platform enabling loan
+                  processing, financial reporting, account statements,
+                  notifications, file generation, and role&#8209;based
+                  workflows.
                 </p>
+                <ul class="tag-list">
+                  <li>Angular</li>
+                  <li>Java Spring Boot</li>
+                  <li>PL/SQL</li>
+                  <li>OracleDB</li>
+                  <li>React</li>
+                </ul>
               </div>
-              <div class="card-experience">
-                <h6>
-                  <span> Software Developer </span>
-                </h6>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Software Developer</h3>
+                  <span class="timeline-date">Apr 2018 &ndash; Oct 2018</span>
+                </div>
                 <a
-                  href="https://www.sena.edu.co/es-co/Paginas/default.aspx"
-                  class="job-enterpise"
+                  class="timeline-company"
+                  href="https://www.sena.edu.co/"
                   target="_blank"
-                  >@SENA</a
+                  rel="noopener"
+                  >SENA &middot; Palmira, Colombia</a
                 >
-                <h6>
-                  <span class="experience-time"> 2018 May - Oct </span>
-                </h6>
                 <p>
-                  Development and analysis of high-level multi-platform mobile
-                  and web applications. technologies like Angular, Ionic,
-                  NodeJs, Spring boot, H2.
+                  Volunteer in the Sennova research and innovation project:
+                  built a mobile application supporting the fruit and vegetable
+                  trade for local producers.
                 </p>
+                <ul class="tag-list">
+                  <li>Angular</li>
+                  <li>Ionic</li>
+                  <li>Node.js</li>
+                  <li>Spring Boot</li>
+                </ul>
               </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h3>Freelance Software Developer</h3>
+                  <span class="timeline-date">Sep 2017 &ndash; Feb 2020</span>
+                </div>
+                <span class="timeline-company">Self&#8209;employed &middot; Colombia</span>
+                <p>
+                  Developed web and mobile applications based on organized,
+                  scalable, and sustainable architectures, meeting client
+                  requirements across multiple industries.
+                </p>
+                <ul class="tag-list">
+                  <li>Angular</li>
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Ionic</li>
+                  <li>Laravel</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================ Skills ============================ -->
+      <section class="section section-alt" id="skills">
+        <div class="section-inner">
+          <h2 class="section-title reveal">Skills</h2>
+
+          <div class="skills-grid">
+            <article class="skill-card reveal">
+              <h3>Frontend</h3>
+              <ul class="chip-list">
+                <li>
+                  <img src="./public/assets/imgs/react.svg" alt="" />React
+                </li>
+                <li>Next.js</li>
+                <li>
+                  <img src="./public/assets/imgs/angular-icon.svg" alt="" />Angular
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/typescript.svg" alt="" />TypeScript
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/javascript.svg" alt="" />JavaScript
+                </li>
+                <li>Redux</li>
+                <li>
+                  <img src="./public/assets/imgs/html-5.svg" alt="" />HTML5
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/css-3.svg" alt="" />CSS3
+                </li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal">
+              <h3>Mobile</h3>
+              <ul class="chip-list">
+                <li>
+                  <img src="./public/assets/imgs/flutter.svg" alt="" />Flutter
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/react.svg" alt="" />React Native
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/ionic.svg" alt="" />Ionic
+                </li>
+                <li>Codemagic CI/CD</li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal">
+              <h3>Backend</h3>
+              <ul class="chip-list">
+                <li>
+                  <img src="./public/assets/imgs/node-js-logo.svg" alt="" />Node.js
+                </li>
+                <li>NestJS</li>
+                <li>
+                  <img src="./public/assets/imgs/spring.svg" alt="" />Spring Boot
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/dot-net-core-7.svg" alt="" />ASP.NET Core
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/php.svg" alt="" />PHP
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/laravel.svg" alt="" />Laravel
+                </li>
+                <li>GraphQL</li>
+                <li>REST</li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal">
+              <h3>Cloud &amp; DevOps</h3>
+              <ul class="chip-list">
+                <li>AWS</li>
+                <li>
+                  <img src="./public/assets/imgs/azure.svg" alt="" />Azure
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/google-cloud.svg" alt="" />Google Cloud
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/firebase.svg" alt="" />Firebase
+                </li>
+                <li>Docker</li>
+                <li>CircleCI</li>
+                <li>Azure DevOps</li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal">
+              <h3>Databases</h3>
+              <ul class="chip-list">
+                <li>
+                  <img src="./public/assets/imgs/postgresql.svg" alt="" />PostgreSQL
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/mysql.svg" alt="" />MySQL
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/oracle.svg" alt="" />OracleDB
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/microsoft-sql-server.svg" alt="" />SQL Server
+                </li>
+                <li>
+                  <img src="./public/assets/imgs/mongodb.svg" alt="" />MongoDB
+                </li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal">
+              <h3>Testing &amp; Quality</h3>
+              <ul class="chip-list">
+                <li>Jest</li>
+                <li>Cypress</li>
+                <li>React Testing Library</li>
+                <li>Storybook</li>
+                <li>Snyk</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== Projects =========================== -->
+      <section class="section" id="projects">
+        <div class="section-inner">
+          <h2 class="section-title reveal">Highlighted projects</h2>
+
+          <div class="projects-grid">
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>AI Telemedicine Platform</h3>
+                <span class="project-date">2021 &ndash; 2026</span>
+              </div>
+              <p>
+                AI&#8209;enhanced telemedicine platform with a medical chatbot
+                for pre&#8209;diagnosis, prescription requests, clinical
+                studies, online payments, and multi&#8209;role dashboards.
+              </p>
+              <ul class="tag-list">
+                <li>React</li>
+                <li>NestJS</li>
+                <li>AI</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Tyba</h3>
+                <span class="project-date">2022 &ndash; 2023</span>
+              </div>
+              <p>
+                Fintech investment app for Latin America: investments, tax
+                insights, and tools to grow your money securely.
+              </p>
+              <ul class="tag-list">
+                <li>Flutter</li>
+                <li>Node.js</li>
+                <li>Fintech</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Almundo</h3>
+                <span class="project-date">2022 &ndash; 2023</span>
+              </div>
+              <p>
+                Travel platform operating across Latin America offering
+                vacation plans, flights, lodging, and much more.
+              </p>
+              <ul class="tag-list">
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Travel</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Suka ERP</h3>
+                <span class="project-date">2023</span>
+              </div>
+              <p>
+                ERP system for managing shipping, receiving, and billing of
+                goods, operating mainly in the southern region of Latin
+                America.
+              </p>
+              <ul class="tag-list">
+                <li>Angular</li>
+                <li>Node.js</li>
+                <li>ERP</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Prescribe Wellness</h3>
+                <span class="project-date">2021 &ndash; 2022</span>
+              </div>
+              <p>
+                U.S. healthcare platform that lets customers compare medical
+                plan options and find the nearest pharmacies based on their
+                location.
+              </p>
+              <ul class="tag-list">
+                <li>React</li>
+                <li>GraphQL</li>
+                <li>Healthcare</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Agro Management App</h3>
+                <span class="project-date">2020 &ndash; 2021</span>
+              </div>
+              <p>
+                Agricultural management app enabling farmers to organize
+                shifts, yields, crops, and production cycles with real&#8209;time
+                communication and role&#8209;based dashboards.
+              </p>
+              <ul class="tag-list">
+                <li>Flutter</li>
+                <li>MongoDB</li>
+                <li>AgroTech</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Sara LT</h3>
+                <span class="project-date">2020</span>
+              </div>
+              <p>
+                Private transportation service exclusively for women &mdash;
+                passenger and driver apps with real&#8209;time tracking and
+                identity validation.
+              </p>
+              <ul class="tag-list">
+                <li>Flutter</li>
+                <li>Firebase</li>
+                <li>Mobility</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Pharmacy Connect</h3>
+                <span class="project-date">2019 &ndash; 2020</span>
+              </div>
+              <p>
+                Connectivity platform unifying multiple pharmacies with
+                role&#8209;based dashboards, an admin panel, and real&#8209;time
+                notifications.
+              </p>
+              <ul class="tag-list">
+                <li>Angular</li>
+                <li>.NET Core</li>
+                <li>Healthcare</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top">
+                <h3>Banking &amp; Loans Platform</h3>
+                <span class="project-date">2018 &ndash; 2019</span>
+              </div>
+              <p>
+                Banking platform enabling loan processing, financial reporting,
+                account statements, and role&#8209;based workflows.
+              </p>
+              <ul class="tag-list">
+                <li>Angular</li>
+                <li>Spring Boot</li>
+                <li>Banking</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== Education =========================== -->
+      <section class="section section-alt" id="education">
+        <div class="section-inner">
+          <h2 class="section-title reveal">Education &amp; certifications</h2>
+
+          <div class="education-grid">
+            <div class="education-column reveal">
+              <h3 class="column-title">Education</h3>
+              <ul class="education-list">
+                <li>
+                  <h4>Software Engineering</h4>
+                  <p class="education-place">
+                    Polit&eacute;cnico Grancolombiano &middot; 2023 &ndash; 2025
+                  </p>
+                </li>
+                <li>
+                  <h4>Systems Analysis &amp; Development Technologist</h4>
+                  <p class="education-place">
+                    SENA &mdash; Industrial Biotechnology Center &middot; 2016
+                    &ndash; 2018
+                  </p>
+                  <p class="education-note">
+                    GPA 4.5 &middot; Graduated with distinction
+                  </p>
+                </li>
+                <li>
+                  <h4>Systems Engineering</h4>
+                  <p class="education-place">
+                    Instituci&oacute;n Universitaria Antonio Jos&eacute; Camacho
+                    &middot; 2015 &ndash; 2016
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="education-column reveal">
+              <h3 class="column-title">Certifications</h3>
+              <ul class="cert-list">
+                <li>Angular (Intermediate) Certificate</li>
+                <li>React Redux Esencial</li>
+                <li>REACT pr&aacute;ctico: Sports management web app</li>
+                <li>AngularJS pr&aacute;ctico: Web app with Node.js &amp; MongoDB</li>
+                <li>Professional Git &amp; GitHub course</li>
+              </ul>
+
+              <h3 class="column-title languages-title">Languages</h3>
+              <ul class="cert-list">
+                <li>Spanish &mdash; Native</li>
+                <li>English &mdash; Professional working proficiency</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="next-button" onclick="plusSlides(1)">
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            viewBox="0 0 39 11"
-            enable-background="new 0 0 39 11"
-          >
-            <polygon
-              points="33.5,0 32.8,0.7 37.1,5 0,5 0,6 37.1,6 32.8,10.3 33.5,11 39,5.5 "
-            ></polygon>
-          </svg>
-        </div>
-      </div>
-      <div class="bottom-indicators" style="text-align: center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-    </section>
-    <section class="banner-skills-container">
-      <div class="skills-wrapper">
-        <div class="skills-title">
-          <h4><span>Skills</span></h4>
-          <div class="skills-bar"></div>
-        </div>
-        <div class="carousel-banner">
-          <div class="prev-button white_color" onclick="plusSlidesSKills(-1)">
-            <svg
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 39 11"
-              enable-background="new 0 0 39 11"
+      </section>
+
+      <!-- =========================== Contact ============================ -->
+      <section class="section" id="contact">
+        <div class="section-inner">
+          <h2 class="section-title reveal">Get in touch</h2>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal">
+              <p class="contact-lead">
+                I&rsquo;m always open to discussing new projects, opportunities,
+                or just talking tech. Drop me a message and I&rsquo;ll get back
+                to you as soon as I can.
+              </p>
+              <ul class="contact-details">
+                <li>
+                  <span class="contact-label">Location</span>
+                  <span>Valle del Cauca, Colombia</span>
+                </li>
+                <li>
+                  <span class="contact-label">Website</span>
+                  <a href="https://jdmartinezrios.github.io/"
+                    >jdmartinezrios.github.io</a
+                  >
+                </li>
+                <li>
+                  <span class="contact-label">LinkedIn</span>
+                  <a
+                    href="https://www.linkedin.com/in/juan-david-martinez-rios"
+                    target="_blank"
+                    rel="noopener"
+                    >juan-david-martinez-rios</a
+                  >
+                </li>
+                <li>
+                  <span class="contact-label">GitHub</span>
+                  <a
+                    href="https://github.com/jdmartinezrios"
+                    target="_blank"
+                    rel="noopener"
+                    >jdmartinezrios</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <form
+              id="contact-form"
+              class="contact-form reveal"
+              action="https://formspree.io/f/xjvjpgav"
+              method="POST"
             >
-              <polygon
-                points="33.5,0 32.8,0.7 37.1,5 0,5 0,6 37.1,6 32.8,10.3 33.5,11 39,5.5 "
-              ></polygon>
-            </svg>
-          </div>
-          <div class="container-slides">
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/javascript.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Javascript </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/typescript.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Typescript </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/node-js-logo.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> NodeJS </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
+              <div class="form-row">
+                <label class="form-group">
+                  <span class="visually-hidden">Name</span>
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    placeholder="Name"
+                    autocomplete="name"
+                  />
+                </label>
+                <label class="form-group">
+                  <span class="visually-hidden">Email</span>
+                  <input
+                    type="email"
+                    required
+                    name="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                  />
+                </label>
               </div>
-            </div>
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/angular-icon.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Angular </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/flutter.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Flutter </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 year using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/html-5.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Html </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/css-3.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Css </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/jee-2.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Java EE </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/spring.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Spring </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 2 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/php.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Php </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/mysql.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> MySql </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/laravel.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Laravel </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 2 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/postgresql.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> PostgreSQL </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/ionic.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Ionic </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/react.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> ReactJS </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for more than 4 years using it
-                    in personal projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/mongodb.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> MongoDB </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 2 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/firebase.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Firabase </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 3 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/oracle.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Oracle </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/dot-net-core-7.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> .NET core </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 2 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/microsoft-sql-server.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> SQL Server </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/azure.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Azure </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="skills-slide fade">
-              <div class="skills-slide-body">
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/c++.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> C++ </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/facebook.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Facebook API </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 1 year using it in personal
-                    projects and high level companies.
-                  </p>
-                </div>
-                <div class="card-experience">
-                  <h6 class="white_color">
-                    <img
-                      src="./public/assets/imgs/google-cloud.svg"
-                      height="50"
-                      width="50"
-                      alt=""
-                    />
-                    <span> Google Cloud </span>
-                  </h6>
-                  <p class="ligth_color">
-                    I have worked with this tech for 4 years using it in
-                    personal projects and high level companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="next-button white_color" onclick="plusSlidesSKills(1)">
-            <svg
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 39 11"
-              enable-background="new 0 0 39 11"
-            >
-              <polygon
-                points="33.5,0 32.8,0.7 37.1,5 0,5 0,6 37.1,6 32.8,10.3 33.5,11 39,5.5 "
-              ></polygon>
-            </svg>
-          </div>
-        </div>
-        <div class="bottom-indicators" style="text-align: center">
-          <span class="dot_skilss" onclick="currentSlideSKills(1)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(2)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(3)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(4)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(5)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(6)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(7)"></span>
-          <span class="dot_skilss" onclick="currentSlideSKills(8)"></span>
-        </div>
-      </div>
-    </section>
-
-    <section class="banner-experience-container banner-projects-container">
-      <div class="experience-title">
-        <h4><span>Projects</span></h4>
-        <div class="experience-bar"></div>
-      </div>
-      <div class="container-slides">
-        <div class="projects-slide fade">
-          <div class="projects-slide-body">
-            <div class="card-experience">
-              <h6>
-                <span> Suka </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2023 Aug - 2023 Oct </span>
-              </h6>
-              <p>
-                ERP system, for the management of shipping, receiving, and
-                billing of goods, mainly operating in the southern region of
-                Latin America.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Almundo </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2022 Mar - 2023 Sep </span>
-              </h6>
-              <p>
-                Software platform operating in Latin America focused on offering
-                vocational plans, traveling, flights, and much more.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Tyba </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2022 Nov - 2023 Feb </span>
-              </h6>
-              <p>
-                Mobile applications for investment and to get more information
-                about taxes, to get more money using the concept of Fintech, and
-                much more.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="projects-slide fade">
-          <div class="projects-slide-body">
-            <div class="card-experience">
-              <h6>
-                <span> Prescribe Wellness </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2021 Mar - 2022 Aug </span>
-              </h6>
-              <p>
-                Fully integrated software that allows customers to see the
-                different options for medical plans and the nearest pharmacies
-                depending on their location.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Teen Workforce Initiative </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2021 Sep - 2022 Mar </span>
-              </h6>
-              <p>
-                Software to share job information, shedule webinars and
-                workshops, focused in the young people of Arizona.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Panelist Connect </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2021 Jan - 2021 Sep </span>
-              </h6>
-              <p>
-                A software tool to communicate a mobile device with an NUC
-                server device via BLE (Bluetooth).
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="projects-slide fade">
-          <div class="projects-slide-body">
-            <div class="card-experience">
-              <h6>
-                <span> eCpunch </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2020 Mar - 2021 Jan </span>
-              </h6>
-              <p>
-                Fully integrated software that allows you to control the
-                operation from planning to executing economic and business
-                activities.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> SaraLT Passenger </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2020 Feb - 2020 Jun </span>
-              </h6>
-              <p>
-                Software for the management of private transport exclusively for
-                women.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> SaraLT Driver </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2020 Feb - 2020 Jun </span>
-              </h6>
-              <p>
-                Software to labor management of a woman giving a private
-                transport exclusively for women.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="projects-slide fade">
-          <div class="projects-slide-body">
-            <div class="card-experience">
-              <h6>
-                <span> Ryftracking </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2020 Jan - 2020 Apr </span>
-              </h6>
-              <p>
-                Software to manage shipments and parcels with an integrated
-                tracking system.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Ortho Dermatologics </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2019 May - 2019 Nov </span>
-              </h6>
-              <p>
-                Software dedicated to information management among a group of
-                dermatology companies in Dallas TX.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Psalm 127:1a </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2019 Jan - 2019 Jun </span>
-              </h6>
-              <p>
-                Software dedicated to sharing multimedia content based on
-                Christian building themes.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="projects-slide fade">
-          <div class="projects-slide-body">
-            <div class="card-experience">
-              <h6>
-                <span> CRM Coomeva </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2018 Dec - 2019 May </span>
-              </h6>
-              <p>
-                Software dedicated to user management within a business
-                environment.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> Points Coomeva </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2019 Feb - 2019 Apr </span>
-              </h6>
-              <p>
-                Software dedicated to management of statistical data for a group
-                of companies.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> eLearning </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2018 Apr - 2018 Nov </span>
-              </h6>
-              <p>
-                Software to management of free virtual education and generation
-                of educational multimedia content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="projects-slide fade">
-          <div class="projects-slide-body">
-            <div class="card-experience">
-              <h6>
-                <span> DelCampo </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2018 Apr - 2018 Nov </span>
-              </h6>
-              <p>Software offered as a digital green food display case.</p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> iEmergencias </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2016 Sep - 2017 Dec </span>
-              </h6>
-              <p>
-                Software in charge of reporting risk situations to emergency
-                institutions.
-              </p>
-            </div>
-            <div class="card-experience">
-              <h6>
-                <span> ServicesColR&F </span>
-              </h6>
-              <h6>
-                <span class="experience-time"> 2016 Nov - Dec 2016 </span>
-              </h6>
-
-              <p>
-                Software to management and operational control of a company.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bottom-indicators" style="text-align: center">
-        <span class="dot_projects" onclick="currentSlideProjects(1)"></span>
-        <span class="dot_projects" onclick="currentSlideProjects(2)"></span>
-        <span class="dot_projects" onclick="currentSlideProjects(3)"></span>
-        <span class="dot_projects" onclick="currentSlideProjects(4)"></span>
-        <span class="dot_projects" onclick="currentSlideProjects(5)"></span>
-      </div>
-    </section>
-
-    <section class="banner-contact-container">
-      <div class="contact-wrapper-one">
-        <div class="contact-title">
-          <h4><span>QUICK ID</span></h4>
-          <div class="skills-bar"></div>
-
-          <div class="contact-row-info">
-            <div class="contact-row-info-one">
-              <p>Website</p>
-              <p>Address</p>
-            </div>
-            <div class="contact-row-info-two">
-              <p>jdmartinezrios.github.io</p>
-              <p>Valle del Cauca - Colombia</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contact-wrapper-two">
-        <div class="contact-title">
-          <h4><span>CONTACT ME</span></h4>
-          <div class="skills-bar"></div>
-
-          <form
-            id="#contact-form"
-            action="https://formspree.io/f/xjvjpgav"
-            method="POST"
-          >
-            <div class="form-row">
-              <div class="form-group">
-                <input type="text" required name="name" placeholder="Name" />
-              </div>
-              <div class="form-group">
-                <input type="text" required name="email" placeholder="Email" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
+              <label class="form-group">
+                <span class="visually-hidden">Subject</span>
                 <input
                   type="text"
                   required
                   name="subject"
                   placeholder="Subject"
                 />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
+              </label>
+              <label class="form-group">
+                <span class="visually-hidden">Message</span>
                 <textarea
-                  type="text"
                   required
                   name="message"
+                  rows="5"
                   placeholder="Message"
-                  style="resize: none"
                 ></textarea>
-              </div>
-            </div>
-            <div class="form-row">
-              <button type="submit" class="form-button">Submit</button>
-            </div>
-          </form>
+              </label>
+              <button type="submit" class="button button-primary form-submit">
+                Send message
+              </button>
+              <p
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>
+          &copy; <span id="year"></span> Juan David Mart&iacute;nez R&iacute;os.
+          Built with plain HTML, CSS &amp; JavaScript.
+        </p>
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/in/juan-david-martinez-rios"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn profile"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/jdmartinezrios"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub profile"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 20.86c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .3"
+              />
+            </svg>
+          </a>
         </div>
       </div>
-    </section>
-    <footer>
-      <div>
-        <a href="./public/assets/files/CV.pdf" download
-          >Download my full resume</a
-        >
-        <p>© <span id="year"></span> by Juan David Martinez Rios.</p>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/juan-david-martinez-r%C3%ADos-743941139/?locale=en_US"
-              target="_blank"
-              data-content="https://www.linkedin.com/in/juan-david-martinez-r%C3%ADos-743941139/?locale=en_US"
-              data-type="external"
-              rel="nofollow noopener"
-              id="comp-irlzuvid0imagelink"
-              class="lb1imageItemlink"
-            >
-              <img
-                id="comp-irlzuvid0imageimageimage"
-                alt="LinkedIn - Black Circle"
-                data-type="image"
-                itemprop="image"
-                style="width: 32px; height: 32px; object-fit: cover"
-                src="./public/assets/imgs/aa0402eb9ba2430d9d0620b59556efca.webp"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/jdmartinezrios"
-              target="_blank"
-              data-content="https://github.com/jdmartinezrios"
-              data-type="external"
-              rel="nofollow noopener"
-              id="comp-irlzuvid0imagelink"
-              class="lb1imageItemlink"
-            >
-              <img
-                id="comp-irlzuvid0imageimageimage"
-                alt="GitHub - Black Circle"
-                data-type="image"
-                itemprop="image"
-                style="
-                  position: relative;
-                  bottom: -5px;
-                  width: 42px;
-                  height: 42px;
-                  object-fit: cover;
-                "
-                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-              />
-            </a>
-          </li>
-        </ul>
-        <p>Follow me on social networks</p>
-      </div>
     </footer>
-    <script type="text/javascript">
-      const form = document.getElementById("#contact-form");
-      //Send mail
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then((response) => {
-            form.reset();
-            window.alert("Thank you for contacting me!");
-          })
-          .catch((error) => {
-            window.alert("Error sending mail");
-          });
-      };
-      form.addEventListener("submit", handleSubmit);
-    </script>
   </body>
 </html>
