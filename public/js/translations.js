@@ -34,7 +34,7 @@ const TRANSLATIONS = {
     "hero.role": "Ingeniero de Software Senior",
     "hero.roleDetail": "Full Stack · Web, Móvil e IA",
     "hero.summary":
-      "Construyo productos web y móviles de principio a fin — desde el diseño y la arquitectura hasta las pruebas y el despliegue — para empresas de salud, fintech y comercio electrónico en América. Actualmente creo soluciones de salud escalables y flujos de trabajo con IA en",
+      "Construyo productos web, móviles y de IA de principio a fin — desde el diseño y la arquitectura hasta las pruebas y el despliegue — para empresas en América y más allá. Actualmente construyo soluciones empresariales escalables y flujos de trabajo con IA en",
     "hero.stat.years": "Años de experiencia",
     "hero.stat.projects": "Proyectos entregados",
     "hero.stat.companies": "Empresas y clientes",
@@ -62,7 +62,7 @@ const TRANSLATIONS = {
     "exp.patagonian.role": "Ingeniero de Software",
     "exp.patagonian.date": "Ene 2021 – Ene 2026",
     "exp.patagonian.desc":
-      "Lideré el desarrollo de una plataforma de telemedicina potenciada con IA, con un chatbot médico para prediagnóstico, solicitudes de recetas, estudios clínicos, pagos en línea, notificaciones en tiempo real, dashboards multirol y un portal de administración completo.",
+      "Lideré el desarrollo de una plataforma de telemedicina potenciada con IA, con un chatbot médico para prediagnóstico, solicitudes de recetas, estudios clínicos, pagos en línea, notificaciones en tiempo real, dashboards multirol y un portal de administración completo. Construí agentes de IA y funcionalidades basadas en LLMs, entregando productos multiplataforma con pipelines de CI/CD en Jenkins y Codemagic.",
 
     "exp.tyba.role": "Ingeniero Frontend",
     "exp.tyba.company": "tyba · Remoto",
@@ -115,6 +115,9 @@ const TRANSLATIONS = {
     "proj.telemedicine.title": "Plataforma de Telemedicina con IA",
     "proj.telemedicine.desc":
       "Plataforma de telemedicina potenciada con IA, con un chatbot médico para prediagnóstico, solicitudes de recetas, estudios clínicos, pagos en línea y dashboards multirol.",
+    "proj.investorstrides.date": "2026 – Actual",
+    "proj.investorstrides.desc":
+      "Proyecto freelance: plataforma de análisis de decisiones para inversionistas — un portafolio simulado con decisiones inmutables con marca de tiempo, actualizaciones diarias al cierre del mercado y métricas de rendimiento, como analítica deportiva aplicada a la inversión.",
     "proj.tyba.desc":
       "App de inversión fintech para América Latina: inversiones, información de impuestos y herramientas para hacer crecer tu dinero de forma segura.",
     "proj.almundo.desc":
